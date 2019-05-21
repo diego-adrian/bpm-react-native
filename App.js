@@ -1,40 +1,53 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        {/* <View style={styles.header}>
+          <Image source={require('./assets/login/tres.jpg')} style={[styles.backgroundImage, styles.reverse]}></Image>
+        </View> */}
+        <View style={styles.body}>
+          <Text style={styles.welcome}>Welcome to React Native!</Text>
+          <Text style={styles.instructions}>To get started, edit App.js Adrian</Text>
+        </View>
+        <View style={styles.footer}>
+          <Image source={require('./assets/login/backgroundFooter.jpg')} style={[styles.backgroundImage]}></Image>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  header: {
+    flex: 1,
+    alignItems: 'flex-start'
+  },
+  footer: {
+    flex: 2,
+    alignItems: 'flex-end'
+  },
+  reverse: {
+    transform: [{
+      scaleY: -1
+    }]
+  },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'stretch',
+    overflow: 'visible',
+    width: Dimensions.get('window').width
+  },
+  body: {
+    flex: 3,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#FFF'
   },
   welcome: {
     fontSize: 20,
