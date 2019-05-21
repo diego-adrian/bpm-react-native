@@ -10,3 +10,6 @@ react-native run-android
 touch ~/.android/repositories.cfg
 # Tmabien puedes verificar
 yes | sdkmanager --licenses
+
+# Para hot realoading
+En el dispositivo real agitar y le aparecera opciones
