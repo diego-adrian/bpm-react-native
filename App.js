@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image, Dimensions} from 'react-native';
-
+import {StyleSheet, Text, View, Image, Dimensions, TextInput} from 'react-native';
 export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <View style={styles.header}>
-          <Image source={require('./assets/login/tres.jpg')} style={[styles.backgroundImage, styles.reverse]}></Image>
-        </View> */}
+        <View style={styles.header}>
+          <Image source={require('./assets/login/logoAgetic.png')} style={styles.logoAgetic}></Image>
+        </View>
         <View style={styles.body}>
-          <Text style={styles.welcome}>Welcome to React Native!</Text>
-          <Text style={styles.instructions}>To get started, edit App.js Adrian</Text>
+          <TextInput
+           placeholder="Hola"
+          ></TextInput>
         </View>
         <View style={styles.footer}>
           <Image source={require('./assets/login/backgroundFooter.jpg')} style={[styles.backgroundImage]}></Image>
@@ -22,8 +22,22 @@ export default class App extends Component {
 
 const styles = StyleSheet.create({
   header: {
+    flex: 2,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  logoAgetic: {
+    width: 100,
+    height: 100,
+    borderWidth: 2,
+    resizeMode: 'contain',
+    borderStyle: 'solid',
+    borderColor: '#000'
+  },
+  body: {
     flex: 1,
-    alignItems: 'flex-start'
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   footer: {
     flex: 2,
@@ -39,11 +53,6 @@ const styles = StyleSheet.create({
     resizeMode: 'stretch',
     overflow: 'visible',
     width: Dimensions.get('window').width
-  },
-  body: {
-    flex: 3,
-    alignItems: 'center',
-    justifyContent: 'center'
   },
   container: {
     flex: 1,
