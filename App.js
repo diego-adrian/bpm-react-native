@@ -16,17 +16,33 @@ export default class App extends Component {
           <View style={styles.bottomHeader}/>
         </View>
         <View style={styles.footer}>
-          <Icon name="account-box" size={30} style={styles.iconNit}/>
-          <TextInput
-            style={styles.inputText}
-            placeholderTextColor={'rgba(0,0,0,.2)'}
-            placeholder={'NIT'}
-          />
-          <TextInput
-            style={styles.inputText}
-            placeholderTextColor={'rgba(0,0,0,.2)'}
-            placeholder={'Usuario'}
-          />
+          <View style={styles.form}>
+            <View style={styles.bloquesComponentes}>
+              <Icon name="account-balance" size={30} style={styles.inputIcon}/>
+              <TextInput
+                style={styles.input}
+                placeholderTextColor={'rgba(0,0,0,.2)'}
+                placeholder={'NIT'}
+              />
+            </View>
+            <View style={styles.bloquesComponentes}>
+              <Icon name="account-box" size={30} style={styles.inputIcon}/>
+              <TextInput
+                style={styles.input}
+                placeholderTextColor={'rgba(0,0,0,.2)'}
+                placeholder={'Usuario'}
+              />
+            </View>
+            <View style={styles.bloquesComponentes}>
+              <Icon name="security" size={30} style={styles.inputIcon}/>
+              <TextInput
+                style={styles.input}
+                secureTextEntry={true}
+                placeholderTextColor={'rgba(0,0,0,.2)'}
+                placeholder={'password'}
+              />
+            </View>
+          </View>
         </View>
       </View>
     );
@@ -34,17 +50,25 @@ export default class App extends Component {
 }
 
 const styles = StyleSheet.create({
+  form: {
+    backgroundColor: 'transparent',
+    position: 'absolute',
+    top: -15
+  },
   container: {
     flex: 1,
     backgroundColor: 'transparent'
   },
-  iconNit: {
+  bloquesComponentes: {
+    paddingVertical: 5
+  },
+  inputIcon: {
     position: 'absolute',
-    top: -10,
-    left: 45,
+    top: 10,
+    left: 5,
     color: PRIMARY
   },
-  inputText: {
+  input: {
     borderColor: `rgba(0,77,64, .2)`,
     borderWidth: 1,
     height: 40,
